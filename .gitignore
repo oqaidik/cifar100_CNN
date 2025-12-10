@@ -1,0 +1,19 @@
+# --- BIG FILES / DATA ---
+data/
+*.tar.gz
+*.zip
+*.pt
+*.pth
+
+# --- PYTHON CACHE / JUNK ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+
+# --- ENVIRONMENTS ---
+.env
+.venv
+venv/
+env/
