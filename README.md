@@ -1,5 +1,7 @@
 # CIFAR-100 Image Classification – Baseline CNN (PyTorch)
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/oqaidik/cifar100_CNN/blob/main/notebooks/O2_evaluation.ipynb)
+
 This project implements a clean, professional, and fully reproducible pipeline for training and evaluating a Convolutional Neural Network (CNN) on the **CIFAR-100** dataset.
 
 The repository includes:
@@ -41,6 +43,9 @@ cifar100_project/
 ├── requirements.txt
 └── README.md
 
+yaml
+Copier le code
+
 ---
 
 ## 🚀 Training the Model (Local)
@@ -51,17 +56,18 @@ From the project root:
 python src/train.py --epochs 20 --batch-size 128 --lr 1e-3
 The script will:
 
-download CIFAR-100 (if needed)
+Download CIFAR-100 (if needed)
 
-create dataloaders
+Create dataloaders
 
-train for the required number of epochs
+Train for the required number of epochs
 
-save the best checkpoint in checkpoints/
+Save the best checkpoint in checkpoints/
 
-Evaluation (Notebook)
-notebooks/O2_evaluation.ipynb
-The notebook performs:
+📊 Evaluation (Notebook)
+Notebook: notebooks/O2_evaluation.ipynb
+
+It performs:
 
 Loading the trained checkpoint
 
@@ -70,47 +76,33 @@ Computing test accuracy
 Visualizing predictions and true labels
 
 Displaying 8 random images with model predictions
+
 Example accuracy after baseline training:
 Test accuracy: XX.XX%
-(Accuracy depends on training duration and hardware.)
+(Depends on hardware and number of epochs.)
+
 🖼️ Example Prediction Visualization
-
 8 random test images are displayed with:
-
-Predicted label
 
 True label
 
+Predicted label
+
 This helps assess model performance beyond accuracy.
 
-Run on Google Colab (GPU)
-
-You can use Colab to evaluate the model or retrain with GPU acceleration.
-
+🚀 Run on Google Colab (GPU)
 Steps:
 
-Open a new notebook in Google Colab
+bash
+Copier le code
+!git clone https://github.com/oqaidik/cifar100_CNN.git
+!pip install -r cifar100_CNN/requirements.txt
+Then open:
 
-Clone the repository:
-
-!git clone https://github.com/<your_username>/cifar100_project.git
-
-
-Install dependencies:
-
-!pip install -r cifar100_project/requirements.txt
-
-
-Run evaluation inside Colab:
-
-from src.models.baseline_cnn import CIFAR100BaselineCNN
-
-
-A Colab badge can also be added here later.
-
-Baseline CNN Architecture
-
-The baseline model includes:
+Copier le code
+notebooks/O2_evaluation.ipynb
+🧠 Baseline CNN Architecture
+The model includes:
 
 3× Conv blocks
 
@@ -128,11 +120,10 @@ reproducibility
 
 serving as a starting point for deeper models (ResNet, ViT…)
 
-Next Improvements (Future Work)
-
+🔮 Next Improvements (Future Work)
 Add ResNet18/34 comparison
 
-Add training resume with --resume option
+Add training resume with --resume
 
 Add wandb or TensorBoard logging
 
@@ -142,10 +133,6 @@ Upload final models to Hugging Face Hub
 
 Implement hyperparameter search (Optuna)
 
-Credits
-
+👤 Credits
 Developed by Khalid Oqaidi
-Course project – deep learning pipeline for CIFAR-100.
 Includes PyTorch, torchvision, and a clean engineering structure.
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/oqaidik/cifar100_CNN/blob/main/notebooks/O2_evaluation.ipynb)
