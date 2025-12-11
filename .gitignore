@@ -1,18 +1,19 @@
-# --- BIG FILES / DATA ---
+# Data & models (do NOT track)
 data/
-*.tar.gz
-*.zip
+checkpoints/
 *.pt
 *.pth
+*.tar.gz
+*.zip
 
-# --- PYTHON CACHE / JUNK ---
+# Python cache
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 .ipynb_checkpoints/
 
-# --- ENVIRONMENTS ---
+# Virtual environments
 .env
 .venv
 venv/
