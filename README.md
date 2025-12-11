@@ -147,3 +147,5 @@ Credits
 Developed by Khalid Oqaidi
 Course project – deep learning pipeline for CIFAR-100.
 Includes PyTorch, torchvision, and a clean engineering structure.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/oqaidik/cifar100_CNN/blob/main/notebooks/O2_evaluation.ipynb)
