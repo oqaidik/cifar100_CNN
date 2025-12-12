@@ -77,8 +77,6 @@ Visualizing predictions and true labels
 
 Displaying 8 random images with model predictions
 
-Example accuracy after baseline training:
-Test accuracy: XX.XX%
 (Depends on hardware and number of epochs.)
 
 🖼️ Example Prediction Visualization
@@ -119,6 +117,21 @@ clarity
 reproducibility
 
 serving as a starting point for deeper models (ResNet, ViT…)
+
+## 🧠 Discussion
+
+The experimental results show that the model trained on Google Colab using GPU achieves a higher overall test accuracy compared to the locally trained model. This improvement is mainly attributed to longer training duration, faster convergence enabled by GPU acceleration, and more stable optimization.
+
+Interestingly, during qualitative inspection on a small subset of test images, the locally trained model occasionally produced more visually convincing predictions than the GPU-trained model. This apparent discrepancy does not contradict the quantitative results and can be explained by several factors.
+
+First, qualitative visualization is performed on a very small sample of images, which is not statistically representative of the entire CIFAR-100 test set. Due to sampling variance, a weaker model may appear superior on a limited number of examples purely by chance.
+
+Second, CIFAR-100 is a challenging dataset with 100 fine-grained classes, many of which are visually similar. As training progresses, the GPU-trained model learns more complex and specialized decision boundaries that improve overall generalization but may occasionally misclassify visually intuitive examples.
+
+Finally, the observed behavior does not indicate overfitting of the locally trained model. Overfitting is characterized by a large gap between training and test performance, which was not observed here. Instead, the results highlight the importance of relying on quantitative evaluation metrics computed on the full test set rather than qualitative inspection alone.
+
+Overall, the comparison confirms that GPU-accelerated training leads to better generalization performance, while qualitative analysis remains a useful but complementary diagnostic tool.
+
 
 🔮 Next Improvements (Future Work)
 Add ResNet18/34 comparison
